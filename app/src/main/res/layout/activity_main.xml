@@ -16,12 +16,19 @@
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         />
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:id="@+id/tieude"
+        android:src="@drawable/ic_launcher_background"
+        />
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lb_dn"
         android:layout_centerHorizontal="true"
         android:background="#DFCD26"
+        android:layout_marginTop="30dp"
         android:hint="Tài khoản"
         android:textSize="30dp"
         android:id="@+id/txt_tk"
@@ -32,9 +39,21 @@
         android:layout_below="@+id/txt_tk"
         android:layout_centerHorizontal="true"
         android:background="#DFCD26"
+        android:layout_marginTop="30dp"
         android:hint="Mật khẩu"
         android:textSize="30dp"
         android:id="@+id/txt_mk"
+        />
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_dangnhap"
+        android:background="#00BCD4"
+        android:layout_below="@id/txt_mk"
+        android:layout_centerHorizontal="true"
+        android:text="Đăng nhập"
+        android:textSize="30dp"
         />
 
 </RelativeLayout>
