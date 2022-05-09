@@ -3,20 +3,26 @@ package com.example.doanandroid;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.doanandroid.placeholder.PlaceholderContent.PlaceholderItem;
-import com.example.doanandroid.databinding.FragmentLstspBinding;
+
 
 import java.util.List;
 
 
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
-    private List<sanpham> mValues;
+    private final List<sanpham> mValues;
     Context context;
+
 
     public MyItemRecyclerViewAdapter(List<sanpham> mValues, Context context) {
         this.mValues = mValues;
@@ -24,24 +30,30 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     }
 
 
+
     public MyItemRecyclerViewAdapter(List<sanpham> items) {
         mValues = items;
-    }
-
-    public MyItemRecyclerViewAdapter(List<sanpham> mValues) {
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.traicay_item, parent, false);
+                .inflate(R.layout.fragment_lstsp, parent, false);
         return new ViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        sanpham tc=mValues.get(position);
+
+        holder.mHinh.setImageResource(tc.getHinh());
+        holder.chitietsp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(context,ChiTietSP.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -50,19 +62,15 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public PlaceholderItem mItem;
 
-        public ViewHolder(FragmentLstspBinding binding) {
-            super(binding.getRoot());
-            mIdView = binding.itemNumber;
-            mContentView = binding.content;
-        }
+        ImageView mHinh;
+        RelativeLayout chitietsp;
 
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+        public ViewHolder(View view) {
+            super(view);
+            chitietsp= view.findViewById(R.id.ctsp);
+            mHinh =  view.findViewById(R.id.imgsp);
+
         }
     }
 }

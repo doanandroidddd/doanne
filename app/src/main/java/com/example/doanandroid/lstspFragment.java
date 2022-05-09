@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,25 +15,23 @@ import android.view.ViewGroup;
 
 import com.example.doanandroid.placeholder.PlaceholderContent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A fragment representing a list of Items.
  */
 public class lstspFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 1;
+    ArrayList<sanpham> dsDL=new ArrayList<>();
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
+
     public lstspFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
+
     public static lstspFragment newInstance(int columnCount) {
         lstspFragment fragment = new lstspFragment();
         Bundle args = new Bundle();
@@ -55,6 +54,10 @@ public class lstspFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lstsp_list, container, false);
 
+        dsDL.add(new sanpham(R.drawable.linh,"Tao Ha Noi","SP01","La trai cay de an, nhung dat"));
+        dsDL.add(new sanpham(R.drawable.linh,"Nho Vung Tau","sp02","Ngot, nhung khong thich an"));
+        dsDL.add(new sanpham(R.drawable.linh,"Chuoi an trom","sp03","Giau chat dinh duong"));
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -64,7 +67,9 @@ public class lstspFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),1));
+
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(dsDL, getActivity()));
         }
         return view;
     }

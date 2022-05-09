@@ -6,12 +6,5 @@
     tools:context=".motspFragment"
     android:background="#EC0B0B">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/linh"
-        android:id="@+id/imgsp"
-        android:layout_centerHorizontal="true"
-        />
 
 </RelativeLayout>
