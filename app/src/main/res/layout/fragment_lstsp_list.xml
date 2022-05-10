@@ -5,9 +5,14 @@
     android:id="@+id/list"
     android:name="com.example.doanandroid.lstspFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".lstspFragment"
-    tools:listitem="@layout/fragment_lstsp" />
+    tools:listitem="@layout/fragment_lstsp"
+    android:background="@drawable/hn2"
+
+
+    />
+

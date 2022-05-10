@@ -11,7 +11,11 @@ public class lietkesp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lietkesp);
-
+        setContentView(R.layout.lietkesp);
+        ImageView img;
+        img=findViewById(R.id.imgsp);
+        Intent intent=getIntent();
+        sanpham sp= new sanpham(R.drawable.linh,"a","a","a");
+        img.setImageResource(sp.getHinh());
     }
 }

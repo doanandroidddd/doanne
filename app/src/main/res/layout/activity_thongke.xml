@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".thongke"
+    android:background="@drawable/hn2"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lb_lb_tknv"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="THỐNG KÊ ĐƠN HÀNG CỦA NHÂN VIÊN"
+        android:textColor="#FFDB8910"
+        android:textSize="15pt"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lb_lb_tknv"
+        android:hint="Mã nhân viên"
+        android:id="@+id/txt_manv"
+        />
+
+    <EditText
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/txt_manv"
+        android:inputType="date"
+        android:hint="Ngày"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/lst_thongke"
+        android:layout_below="@+id/txt_date"
+        />
+
+
+</RelativeLayout>

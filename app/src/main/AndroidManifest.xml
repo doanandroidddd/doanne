@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Doanandroid">
         <activity
+            android:name=".thongke"
+            android:exported="false" />
+        <activity
             android:name=".lietkesp"
             android:exported="false" />
         <activity

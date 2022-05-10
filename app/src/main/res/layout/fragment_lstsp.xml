@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:id="@+id/ctsp">
 
     <ImageView
+        android:id="@+id/imgsp"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/linh"
-        android:id="@+id/imgsp"
-        android:layout_centerHorizontal="true"
+        android:src="@drawable/sps1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên sản phẩm"
+        android:id="@+id/txt_tensp"
+        android:layout_toRightOf="@+id/imgsp"
         />
-</LinearLayout>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Xem chi tiết"
+        android:id="@+id/btn_xemct"
+        android:layout_toRightOf="@+id/txt_tensp"
+        />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Mua hàng"
+        android:id="@+id/btn_muahang"
+        android:layout_below="@id/btn_xemct"
+        android:layout_toRightOf="@+id/txt_tensp"
+        />
+</RelativeLayout>

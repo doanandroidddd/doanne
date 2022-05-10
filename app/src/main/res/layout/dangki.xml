@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/hn1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="ĐĂNG KÝ TÀI KHOẢN"
+        android:textColor="#FFDB8910"
+        android:textSize="15pt"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtUserName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:hint="tên đăng nhập"
+        android:textColorHint="#FFFFFF" />
+
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txtUserName"
+        android:layout_marginTop="20dp"
+        android:hint="mật khẩu"
+        android:inputType="textPassword"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/txtCFPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txtPassword"
+        android:layout_marginTop="20dp"
+        android:hint="xác nhận mật khẩu"
+        android:inputType="textPassword"
+        android:textColorHint="#FFFFFF" />
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txtCFPassword"
+        android:hint="email"
+        android:textColorHint="#FFFFFF" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txtEmail"
+        android:layout_alignParentRight="true"
+        android:background="#FF5500"
+        android:text="ĐĂNG KÝ"
+        android:textSize="8pt"
+        android:textStyle="bold" />
+
+</RelativeLayout>

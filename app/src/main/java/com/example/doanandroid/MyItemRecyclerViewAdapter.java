@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -28,9 +29,6 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         this.mValues = mValues;
         this.context = context;
     }
-
-
-
     public MyItemRecyclerViewAdapter(List<sanpham> items) {
         mValues = items;
     }
@@ -47,13 +45,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         sanpham tc=mValues.get(position);
 
         holder.mHinh.setImageResource(tc.getHinh());
-        holder.chitietsp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(context,ChiTietSP.class);
-                context.startActivity(intent);
-            }
-        });
+        holder.txt_tensp.setText(tc.getTensp());
     }
 
     @Override
@@ -64,12 +56,15 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView mHinh;
-        RelativeLayout chitietsp;
+        TextView txt_tensp;
+        Button btn_dn,btn_xct;
 
         public ViewHolder(View view) {
             super(view);
-            chitietsp= view.findViewById(R.id.ctsp);
+           txt_tensp=view.findViewById(R.id.txt_tensp);
             mHinh =  view.findViewById(R.id.imgsp);
+            btn_dn=view.findViewById(R.id.btn_dangnhap);
+            btn_xct=view.findViewById(R.id.btn_xemct);
 
         }
     }
