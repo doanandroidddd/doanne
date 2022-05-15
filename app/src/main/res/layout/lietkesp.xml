@@ -31,11 +31,14 @@
         android:id="@+id/txt_timkiem"
         android:hint="Bạn muốn tìm sản phẩm nào"
         />
+
     <fragment
         android:id="@+id/fragmentContainerView"
         android:name="com.example.doanandroid.lstspFragment"
-        android:layout_below="@+id/txt_timkiem"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_timkiem"/>
+
+
 
 </RelativeLayout>
