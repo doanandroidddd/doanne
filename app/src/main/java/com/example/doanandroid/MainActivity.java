@@ -29,12 +29,20 @@ public class MainActivity extends AppCompatActivity {
         txt_tk=findViewById(R.id.txt_tk);
         lbdk=findViewById(R.id.lb_dn);
 
-        Button btn_dn;
+        Button btn_dn,btn_dk;
         btn_dn=findViewById(R.id.btn_dangnhap);
+        btn_dk=findViewById(R.id.btn_dangky);
         btn_dn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this,lietkesp.class);
+                startActivity(intent);
+            }
+        });
+        btn_dk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,ThemNV.class);
                 startActivity(intent);
             }
         });

@@ -52,6 +52,17 @@
         android:text="Đăng nhập"
         android:textSize="30dp"
         />
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_dangky"
+        android:background="#00BCD4"
+        android:layout_below="@id/btn_dangnhap"
+        android:layout_centerHorizontal="true"
+        android:text="Đăng ký"
+        android:textSize="30dp"
+        />
 
 
 
