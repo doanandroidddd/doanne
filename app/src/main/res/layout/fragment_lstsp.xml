@@ -17,19 +17,22 @@
         android:id="@+id/txt_tensp"
         android:layout_toRightOf="@+id/imgsp"
         />
+
     <Button
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Xem chi tiết"
         android:id="@+id/btn_xemct"
-        android:layout_toRightOf="@+id/txt_tensp"
-        />
-    <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Mua hàng"
+        android:layout_marginStart="0dp"
+
+        android:layout_toEndOf="@+id/txt_tensp"
+        android:layout_toRightOf="@+id/txt_tensp"
+        android:text="Xem chi tiết" />
+
+    <Button
         android:id="@+id/btn_muahang"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/btn_xemct"
         android:layout_toRightOf="@+id/txt_tensp"
-        />
+        android:text="Bán hàng" />
 </RelativeLayout>

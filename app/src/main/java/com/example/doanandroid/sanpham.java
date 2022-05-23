@@ -13,7 +13,6 @@ String tensp,masp,mota;
         this.mota = mota;
     }
     public sanpham() {
-
     }
     public int getHinh() {
         return hinh;

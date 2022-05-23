@@ -14,11 +14,22 @@
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         />
-
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lb_themnv"
+        android:layout_centerHorizontal="true"
+        android:background="#FF384D51"
+        android:layout_marginTop="30dp"
+        android:hint="Mã nhân viên"
+        android:textSize="30dp"
+        android:textColorHint="#ffffff"
+        android:id="@+id/txt_themmanv"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_themmanv"
         android:layout_centerHorizontal="true"
         android:background="#384D51"
         android:layout_marginTop="30dp"
@@ -39,13 +50,37 @@
         android:textColorHint="#ffffff"
         android:id="@+id/txt_themmk"
         />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_themmk"
+        android:layout_centerHorizontal="true"
+        android:background="#FF384D51"
+        android:layout_marginTop="30dp"
+        android:hint="Tên nhân viên"
+        android:textSize="30dp"
+        android:textColorHint="#ffffff"
+        android:id="@+id/txt_themtennv"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_themtennv"
+        android:layout_centerHorizontal="true"
+        android:background="#FF384D51"
+        android:layout_marginTop="30dp"
+        android:hint="Thêm hình"
+        android:textSize="30dp"
+        android:textColorHint="#ffffff"
+        android:id="@+id/txt_themhinh"
+        />
     <Button
         android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/btn_themnv"
         android:background="#00BCD4"
-        android:layout_below="@id/txt_themmk"
+        android:layout_below="@id/txt_themhinh"
         android:layout_centerHorizontal="true"
         android:text="Thêm nhân viên"
         android:textSize="30dp"
