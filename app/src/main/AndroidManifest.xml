@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Doanandroid">
         <activity
+            android:name=".dangnhaptc"
+            android:exported="false" />
+        <activity
             android:name=".ThemNV"
             android:exported="false" />
         <activity

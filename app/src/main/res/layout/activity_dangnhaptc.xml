@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dangnhaptc">
+
+    <Button
+        android:id="@+id/btn_themnhanvien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm nhân viên"
+        android:layout_below="@+id/lb_dntc"
+     />
+
+    <Button
+        android:id="@+id/btn_hoadon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hóa đơn"
+        android:layout_below="@+id/btn_themnhanvien" />
+
+    <Button
+        android:id="@+id/btn_thongke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thống kê"
+        android:layout_below="@+id/btn_hoadon" />
+
+
+
+
+    <TextView
+        android:id="@+id/lb_dntc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xin chào"
+        android:textSize="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#EFD703"
+ />
+
+</RelativeLayout>

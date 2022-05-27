@@ -14,7 +14,7 @@ public class ChiTietSP extends AppCompatActivity {
         ImageView img;
         img=findViewById(R.id.imgsp);
         Intent intent=getIntent();
-        sanpham sp= new sanpham(R.drawable.linh,"a","a","a");
+        sanpham sp= new sanpham(R.drawable.linh,"a","a","a",1);
         img.setImageResource(sp.getHinh());
     }
 

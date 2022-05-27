@@ -18,6 +18,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,9 +39,10 @@ public class MainActivity extends AppCompatActivity {
         txt_tk=findViewById(R.id.txt_tk);
         lbdk=findViewById(R.id.lb_dn);
         List<nhanvien> nhanviens= new ArrayList<nhanvien>();
-        Button btn_dn,btn_dk;
+        Button btn_dn;
+
         btn_dn=findViewById(R.id.btn_dangnhap);
-        btn_dk=findViewById(R.id.btn_dangky);
+
         btn_dn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,19 +63,13 @@ public class MainActivity extends AppCompatActivity {
                 for (nhanvien nv: nhanviens) {
                     if(txt_mk.getText().toString().equals(nv.mk)&&txt_tk.getText().toString().equals(nv.tk))
                     {
-                        Intent intent=new Intent(MainActivity.this,lietkesp.class);
+                        Intent intent=new Intent(MainActivity.this,dangnhaptc.class);
                         startActivity(intent);
                     }
 
                 }
             }
         });
-        btn_dk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,ThemNV.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

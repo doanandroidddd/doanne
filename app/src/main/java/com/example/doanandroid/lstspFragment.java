@@ -54,9 +54,9 @@ public class lstspFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lstsp_list, container, false);
 
-        dsDL.add(new sanpham(R.drawable.sps1,"Chuột máy tính","SP01","bền bỉ, nhạy"));
-        dsDL.add(new sanpham(R.drawable.sps1,"Bàn phím cơ","sp02","độ nảy tốt"));
-        dsDL.add(new sanpham(R.drawable.sps1,"màn hình","sp03","144hz"));
+        dsDL.add(new sanpham(R.drawable.sps1,"Chuột máy tính","SP01","bền bỉ, nhạy",1));
+        dsDL.add(new sanpham(R.drawable.sps1,"Bàn phím cơ","sp02","độ nảy tốt",1));
+        dsDL.add(new sanpham(R.drawable.sps1,"màn hình","sp03","144hz",1));
 
         // Set the adapter
         if (view instanceof RecyclerView) {

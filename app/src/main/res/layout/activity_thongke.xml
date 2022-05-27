@@ -20,12 +20,11 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/txt_manv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lb_lb_tknv"
-        android:hint="Mã nhân viên"
-        android:id="@+id/txt_manv"
-        />
+        android:hint="Mã nhân viên" />
 
     <EditText
         android:id="@+id/txt_date"
@@ -37,11 +36,16 @@
         android:hint="Ngày"/>
 
     <ListView
+        android:id="@+id/lst_thongke"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/lst_thongke"
-        android:layout_below="@+id/txt_date"
-        />
+        android:layout_below="@+id/txt_date" />
+
+    <Button
+        android:id="@+id/btn_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lọc" />
 
 
 </RelativeLayout>
