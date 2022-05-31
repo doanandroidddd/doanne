@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChiTietSP"
+    android:background="@drawable/hn1">
+
+    <fragment
+        android:id="@+id/fragmchitietsp"
+        android:name="com.example.doanandroid.motspFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+    <Button
+        android:id="@+id/btn_banhang"
+        android:layout_below="@+id/fragmchitietsp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Bán hàng" />
+
+    <EditText
+        android:id="@+id/txt_sl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/btn_banhang"
+        android:hint="Số lượng"
+        android:textColorHint="#FFFFFF"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/txt_makh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/txt_sl"
+        android:textColorHint="#FFFFFF"
+        android:hint="Mã khách hàng"
+         />
+    <EditText
+        android:id="@+id/txt_themmahd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColorHint="#FFFFFF"
+        android:layout_below="@+id/txt_makh"
+        android:hint="Mã hóa đơn"
+        />
+    <EditText
+        android:id="@+id/txt_tenkh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#FFFFFF"
+        android:ems="10"
+        android:layout_below="@+id/txt_themmahd"
+        android:hint="Tên khách hàng"
+        />
+    <EditText
+        android:id="@+id/txt_dckh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/txt_tenkh"
+        android:textColorHint="#FFFFFF"
+        android:hint="Địa chỉ khách hàng"
+        />
+    <EditText
+        android:id="@+id/txt_sdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColorHint="#FFFFFF"
+        android:layout_below="@+id/txt_dckh"
+        android:hint="Số điện thoại"
+        />
+
+
+</RelativeLayout>

@@ -3,6 +3,7 @@ package com.example.doanandroid;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -14,6 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.doanandroid.placeholder.PlaceholderContent;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +31,10 @@ public class lstspFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
-    ArrayList<sanpham> dsDL=new ArrayList<>();
-
-
+    List<sanpham> dsDL=new ArrayList<>();
+    truyenanpham truyen;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
     public lstspFragment() {
     }
 
@@ -53,12 +60,22 @@ public class lstspFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lstsp_list, container, false);
+        truyen=(truyenanpham) getActivity();
+        myRef.child("SanPham").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                dsDL.clear();
+                for (DataSnapshot a: dataSnapshot.getChildren()) {
+                    sanpham sp=a.getValue(sanpham.class);
+                    dsDL.add(sp);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        dsDL.add(new sanpham(R.drawable.sps1,"Chuột máy tính","SP01","bền bỉ, nhạy",1));
-        dsDL.add(new sanpham(R.drawable.sps1,"Bàn phím cơ","sp02","độ nảy tốt",1));
-        dsDL.add(new sanpham(R.drawable.sps1,"màn hình","sp03","144hz",1));
+            }
+        });
 
-        // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
@@ -69,8 +86,15 @@ public class lstspFragment extends Fragment {
             }
             recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),1));
 
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(dsDL, getActivity()));
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(dsDL, getActivity(),truyen));
         }
         return view;
     }
+
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//        if(adapter!=null)
+//            adapter.release();
+//    }
 }

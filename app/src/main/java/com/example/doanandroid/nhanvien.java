@@ -1,6 +1,8 @@
 package com.example.doanandroid;
 
-public class nhanvien {
+import java.io.Serializable;
+
+public class nhanvien implements Serializable {
 
     String tk,mk,manv,tennv;
 

@@ -4,33 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dangnhaptc">
+    tools:context=".dangnhaptc"
+    android:background="@drawable/hn6">
 
     <Button
         android:id="@+id/btn_themnhanvien"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Thêm nhân viên"
         android:layout_below="@+id/lb_dntc"
-     />
+        android:layout_centerHorizontal="true"
+        android:text="Thêm nhân viên"
+        android:layout_marginTop="100dp"
+        />
 
     <Button
-        android:id="@+id/btn_hoadon"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_sanpham"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Hóa đơn"
-        android:layout_below="@+id/btn_themnhanvien" />
+        android:layout_below="@+id/btn_themnhanvien"
+        android:layout_centerHorizontal="true"
+        android:text="Sản phẩm" />
 
     <Button
         android:id="@+id/btn_thongke"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:text="Thống kê"
-        android:layout_below="@+id/btn_hoadon" />
+        android:layout_below="@+id/btn_sanpham" />
 
 
+    <Button
+        android:id="@+id/btn_dangxuat"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Đăng xuất"
+        android:layout_below="@+id/btn_themsp" />
+    <Button
+        android:id="@+id/btn_themsp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_thongke"
+        android:layout_centerHorizontal="true"
+        android:text="Thêm sản phẩm"
 
-
+        />
     <TextView
         android:id="@+id/lb_dntc"
         android:layout_width="wrap_content"
@@ -41,5 +60,7 @@
         android:layout_centerHorizontal="true"
         android:textColor="#EFD703"
  />
+
+
 
 </RelativeLayout>

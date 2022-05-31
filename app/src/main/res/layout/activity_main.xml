@@ -29,17 +29,19 @@
         android:textSize="30dp"
         android:id="@+id/txt_tk"
         />
+
     <EditText
+        android:id="@+id/txt_mk"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_tk"
         android:layout_centerHorizontal="true"
-        android:background="#FF384D51"
         android:layout_marginTop="30dp"
+        android:background="#FF384D51"
         android:hint="Mật khẩu"
-        android:textSize="30dp"
         android:textColorHint="#ffffff"
-        android:id="@+id/txt_mk"
+        android:textSize="30dp"
+        android:inputType="textPassword"
         />
     <Button
         android:layout_marginTop="30dp"
@@ -52,6 +54,8 @@
         android:text="Đăng nhập"
         android:textSize="30dp"
         />
+
+
 
 
 </RelativeLayout>

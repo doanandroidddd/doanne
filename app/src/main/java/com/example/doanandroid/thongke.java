@@ -26,7 +26,7 @@ public class thongke extends AppCompatActivity {
         setContentView(R.layout.activity_thongke);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
-        Button btn_loc=findViewById(R.id.btn_loc);
+
         TextView txt_manv=findViewById(R.id.txt_manv);
         List<HoaDon> hoaDons= new ArrayList<>();
         myRef.child("HoaDon").addValueEventListener(new ValueEventListener() {

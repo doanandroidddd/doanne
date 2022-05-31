@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,10 +24,27 @@ public class dangnhaptc extends AppCompatActivity {
         setContentView(R.layout.activity_dangnhaptc);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
-        Button btn_themnhanvien,btn_hoadon,btn_thongke;
+        Button btn_themnhanvien,btn_sanpham,btn_thongke,btn_dx,btn_themsp;
         btn_themnhanvien=findViewById(R.id.btn_themnhanvien);
-        btn_hoadon=findViewById(R.id.btn_hoadon);
+        btn_sanpham=findViewById(R.id.btn_sanpham);
         btn_thongke=findViewById(R.id.btn_thongke);
+        btn_dx=findViewById(R.id.btn_dangxuat);
+        btn_themsp=findViewById(R.id.btn_themsp);
+        TextView lb_dntc=findViewById(R.id.lb_dntc);
+        nhanvien nv;
+        if(getIntent().getExtras()!=null) {
+            nv = (nhanvien) getIntent().getExtras().get("nv_dn");
+            lb_dntc.setText("Xin chào " +nv.tennv);
+            if(!nv.manv.contains("QL"))
+                btn_themnhanvien.setEnabled(false);
+        }
+        btn_dx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(dangnhaptc.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_themnhanvien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,19 +52,23 @@ public class dangnhaptc extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_hoadon.setOnClickListener(new View.OnClickListener() {
+        btn_themsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                khachhang kh= new khachhang("a","a","a","a");
-                nhanvien nv= new nhanvien("a","a","a","a");
-                List<sanpham> sps= new ArrayList<>();
-                sanpham sp= new sanpham(1,"a","a","a",1);
-                sps.add(sp);
-                DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+                Intent intent=new Intent(dangnhaptc.this,ThemSP.class);
+                startActivity(intent);
+            }
+        });
+        btn_sanpham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(dangnhaptc.this,lietkesp.class);
 
-                HoaDon hd= new HoaDon("a",sps,nv,kh);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("nv_xct",(nhanvien) getIntent().getExtras().get("nv_dn"));
+                intent.putExtras(bundle);
+                startActivity(intent);
 
-                myRef.child("HoaDon").push().setValue(hd);
             }
         });
         btn_thongke.setOnClickListener(new View.OnClickListener() {

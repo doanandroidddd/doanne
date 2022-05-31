@@ -30,14 +30,14 @@ public class ThemNV extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_nv);
-        EditText txt_tk,txt_mk,txt_manvv,txt_tennv,txt_hinhnv;
+        EditText txt_tk,txt_mk,txt_manvv,txt_tennv,txt_xnmk;
         TextView lbdk;
         Button btn_themnv;
         txt_mk=findViewById(R.id.txt_themmk);
         txt_tk=findViewById(R.id.txt_themtk);
         txt_manvv=findViewById(R.id.txt_themmanv);
         txt_tennv=findViewById(R.id.txt_themtennv);
-        txt_hinhnv=findViewById(R.id.txt_themhinh);
+        txt_xnmk=findViewById(R.id.txt_xacnhanmk);
         lbdk=findViewById(R.id.lb_themnv);
         btn_themnv=findViewById(R.id.btn_themnv);
 
@@ -50,7 +50,7 @@ public class ThemNV extends AppCompatActivity {
 
 
                 if(txt_manvv.getText().toString().equals("")||txt_tennv.getText().toString().equals("")||txt_tk.getText().toString().equals("")||txt_mk.getText().toString().equals("")) {
-                    Toast.makeText(ThemNV.this, "Nhập đầy đủ thông tin", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ThemNV.this, "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -73,17 +73,20 @@ public class ThemNV extends AppCompatActivity {
                 for (nhanvien nv:nhanviens) {
                     if(nv.manv.equals(txt_manvv.getText().toString()))
                     {
-                        Toast.makeText(ThemNV.this, "Mã nhân viên đã tồn tại", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ThemNV.this, "Mã nhân viên đã tồn tại", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     if(nv.tk.equals(txt_tk.getText().toString()))
                     {
-                        Toast.makeText(ThemNV.this, "Tài khoản nhân viên đã tồn tại", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ThemNV.this, "Tài khoản nhân viên đã tồn tại", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 }
+
+                if(!txt_mk.getText().toString().equals(txt_xnmk.getText().toString()))
+                    Toast.makeText(ThemNV.this, "Xác nhận mật khẩu không đúng", Toast.LENGTH_SHORT).show();
                 myRef.child("NhanVien").push().setValue(a);
-                //Toast.makeText(ThemNV.this, nhanviens.get(0).manv, Toast.LENGTH_LONG).show();
+                Toast.makeText(ThemNV.this, "Thêm nhân viên thành công", Toast.LENGTH_SHORT).show();
             }
         });
     }

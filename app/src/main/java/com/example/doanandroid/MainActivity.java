@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    List<nhanvien> nhanviens= new ArrayList<nhanvien>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +38,11 @@ public class MainActivity extends AppCompatActivity {
         txt_mk=findViewById(R.id.txt_mk);
         txt_tk=findViewById(R.id.txt_tk);
         lbdk=findViewById(R.id.lb_dn);
-        List<nhanvien> nhanviens= new ArrayList<nhanvien>();
+
         Button btn_dn;
 
         btn_dn=findViewById(R.id.btn_dangnhap);
+
 
         btn_dn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,14 +61,34 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-                for (nhanvien nv: nhanviens) {
-                    if(txt_mk.getText().toString().equals(nv.mk)&&txt_tk.getText().toString().equals(nv.tk))
+                int kq=-1;
+                for (int i=0;i<nhanviens.size();i++) {
+                    if(txt_mk.getText().toString().equals(nhanviens.get(i).mk)&&txt_tk.getText().toString().equals(nhanviens.get(i).tk))
                     {
-                        Intent intent=new Intent(MainActivity.this,dangnhaptc.class);
-                        startActivity(intent);
+                        kq=i;
+                        break;
+//                        Intent intent=new Intent(MainActivity.this,dangnhaptc.class);
+//                        Bundle bundle = new Bundle();
+//                        bundle.putSerializable("nv_dn",nhanviens.get(i));
+//                        intent.putExtras(bundle);
+//                        startActivity(intent);
+
                     }
+//                        else
+//                        Toast.makeText(MainActivity.this,"Sai tên đăng nhập hoặc mật khẩu", Toast.LENGTH_SHORT).show();
 
                 }
+                if(kq!=-1)
+                {
+                    Intent intent=new Intent(MainActivity.this,dangnhaptc.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("nv_dn",nhanviens.get(kq));
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                    return;
+                }
+                else
+                    Toast.makeText(MainActivity.this,"Sai tên đăng nhập hoặc mật khẩu", Toast.LENGTH_SHORT).show();
             }
         });
 

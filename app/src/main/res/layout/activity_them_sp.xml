@@ -4,90 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThemNV"
-    android:background="@drawable/hn5"
-    >
+    tools:context=".ThemSP">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thêm nhân viên"
+        android:text="Thêm sản phẩm"
         android:textSize="50dp"
-        android:id="@+id/lb_themnv"
+        android:id="@+id/lb_themsp"
         android:textColor="#E4AF0F"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         />
+
     <EditText
+        android:id="@+id/txt_themmasp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lb_themnv"
+        android:layout_below="@+id/lb_themsp"
         android:layout_centerHorizontal="true"
-        android:background="#FF384D51"
         android:layout_marginTop="30dp"
-        android:hint="Mã nhân viên"
-        android:textSize="30dp"
+        android:background="#FF384D51"
+        android:hint="Mã sản phẩm"
         android:textColorHint="#ffffff"
-        android:id="@+id/txt_themmanv"
-        />
+        android:textSize="30dp" />
+
     <EditText
+        android:id="@+id/txt_themhinhsp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_themmanv"
+        android:layout_below="@+id/txt_themmasp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:background="#384D51"
-        android:layout_marginTop="30dp"
-        android:hint="Tài khoản"
+        android:hint="Hình sản phẩm"
         android:textColorHint="#ffffff"
-        android:textSize="30dp"
-        android:id="@+id/txt_themtk"
-        />
+        android:textSize="30dp" />
+
     <EditText
+        android:id="@+id/txt_themmota"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_themtk"
+        android:layout_below="@+id/txt_themhinhsp"
         android:layout_centerHorizontal="true"
-        android:background="#FF384D51"
         android:layout_marginTop="30dp"
-        android:hint="Mật khẩu"
-        android:textSize="30dp"
+        android:background="#FF384D51"
+        android:hint="Mô tả"
         android:textColorHint="#ffffff"
-        android:id="@+id/txt_themmk"
-        android:inputType="textPassword"
-        />
+        android:textSize="30dp" />
+
     <EditText
+        android:id="@+id/txt_themtensp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_xacnhanmk"
+        android:layout_below="@+id/txt_themslcon"
         android:layout_centerHorizontal="true"
-        android:background="#FF384D51"
         android:layout_marginTop="30dp"
-        android:hint="Tên nhân viên"
-        android:textSize="30dp"
+        android:background="#FF384D51"
+        android:hint="Tên sản phẩm"
         android:textColorHint="#ffffff"
-        android:id="@+id/txt_themtennv"
-        />
+        android:textSize="30dp" />
+
+
     <EditText
+        android:id="@+id/txt_themslcon"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_themmota"
         android:layout_centerHorizontal="true"
-        android:background="#FF384D51"
         android:layout_marginTop="30dp"
-        android:hint="Xác nhận mật khẩu"
-        android:textSize="30dp"
-        android:layout_below="@+id/txt_themmk"
+        android:background="#FF384D51"
+        android:hint="Số lượng còn"
+        android:inputType="number"
         android:textColorHint="#ffffff"
-        android:id="@+id/txt_xacnhanmk"
-        android:inputType="textPassword"
-        />
+        android:textSize="30dp" />
 
     <Button
-        android:id="@+id/btn_themnv"
-        android:layout_width="300dp"
+        android:id="@+id/btn_themsp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txt_themtennv"
+        android:layout_below="@id/txt_themtensp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:background="#00BCD4"
-        android:text="Thêm nhân viên"
+        android:text="Thêm sản phẩm"
         android:textSize="30dp" />
+
+
+
 </RelativeLayout>

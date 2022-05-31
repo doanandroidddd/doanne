@@ -11,7 +11,7 @@
     app:layoutManager="LinearLayoutManager"
     tools:context=".lstspFragment"
     tools:listitem="@layout/fragment_lstsp"
-    android:background="@drawable/hn2"
+
 
 
     />

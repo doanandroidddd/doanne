@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lietkesp">
+    tools:context=".lietkesp"
+    android:background="@drawable/hn7">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,13 +32,13 @@
         android:id="@+id/txt_timkiem"
         android:hint="Bạn muốn tìm sản phẩm nào"
         />
+
     <fragment
         android:id="@+id/fragmentContainerView"
         android:name="com.example.doanandroid.lstspFragment"
         android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_timkiem" />
-
 
 
 

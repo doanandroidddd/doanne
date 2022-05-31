@@ -13,10 +13,17 @@ import java.util.List;
 public class thongkeAdapter extends BaseAdapter {
     List<HoaDon> items;
     Activity activity;
+    truyenanpham tsp;
     public thongkeAdapter(List<HoaDon> items,Activity activity)
     {
         this.items=items;
         this.activity=activity;
+    }
+    public thongkeAdapter(List<HoaDon> items,Activity activity,truyenanpham tsp)
+    {
+        this.items=items;
+        this.activity=activity;
+        this.tsp=tsp;
     }
     @Override
     public int getCount() {
