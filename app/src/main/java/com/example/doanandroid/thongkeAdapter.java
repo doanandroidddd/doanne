@@ -49,7 +49,6 @@ public class thongkeAdapter extends BaseAdapter {
         khachhang kh= items.get(i).getKh();
         txt_tenkh.setText(kh.getTenkh());
         txt_mahd.setText(items.get(i).getMahd());
-
         return view;
     }
 }

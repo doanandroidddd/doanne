@@ -22,7 +22,7 @@ import java.util.List;
 public class ThemSP extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
-    List<sanpham> sanphams= new ArrayList<sanpham>();
+    static ArrayList<sanpham> sanphams= new ArrayList<sanpham>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,62 +30,78 @@ public class ThemSP extends AppCompatActivity {
         EditText txt_themmasp,txt_themtensp,txt_themhinhsp,txt_themmota,txt_soluongcon;
         TextView lbthemsp;
         Button btn_themsp;
-        txt_themmasp=findViewById(R.id.txt_themmasp);
-        txt_themtensp=findViewById(R.id.txt_themtensp);
-        txt_themhinhsp=findViewById(R.id.txt_themhinhsp);
-        txt_themmota=findViewById(R.id.txt_themmota);
-        txt_soluongcon=findViewById(R.id.txt_themslcon);
+        txt_themmasp=findViewById(R.id.txt_themmasp1);
+        txt_themtensp=findViewById(R.id.txt_themtensp1);
+        txt_themhinhsp=findViewById(R.id.txt_themhinhsp1);
+        txt_themmota=findViewById(R.id.txt_themmota1);
+        txt_soluongcon=findViewById(R.id.txt_themslcon1);
         lbthemsp=findViewById(R.id.lb_themsp);
-        btn_themsp=findViewById(R.id.btn_themsp);
+        btn_themsp=findViewById(R.id.btn_themsp1);
         btn_themsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sanphams.clear();
-                laydulieusp();
-                sanpham sp1= new sanpham(R.drawable.sps1,txt_themtensp.getText().toString(),txt_themmasp.getText().toString(),txt_themmota.getText().toString(),Integer.parseInt(txt_soluongcon.getText().toString()));
 
+
+                myRef.child("SanPham").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        sanphams.clear();
+                        for (DataSnapshot a: dataSnapshot.getChildren()) {
+                            sanpham sp=a.getValue(sanpham.class);
+                            sanphams.add(sp);
+
+                        }
+
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                sanpham sp1= new sanpham(R.drawable.sps1,txt_themtensp.getText().toString(),txt_themmasp.getText().toString(),txt_themmota.getText().toString(),Integer.parseInt(txt_soluongcon.getText().toString()));
+//                sanpham sp1= new sanpham(R.drawable.linh,"b","cc","a",1);
 
                 if(txt_themmasp.getText().toString().equals("")||txt_themtensp.getText().toString().equals("")||txt_themhinhsp.getText().toString().equals("")||txt_themmota.getText().toString().equals("")) {
                     Toast.makeText(ThemSP.this, "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
+//                    for (sanpham sp : sanphams) {
+//                        if (sp.masp.equals(txt_themmasp.getText().toString())) {
+////                            Toast.makeText(ThemSP.this, "Mã sản phẩm đã tồn tại", Toast.LENGTH_SHORT).show();
+////                            return;
+//
+//                        }
+//                        else
+//                        {
+
+                            sanphams.add(sp1);
+                            myRef.child("SanPham").setValue(sanphams);
+                            Toast.makeText(ThemSP.this, "Thêm sản phẩm thành công", Toast.LENGTH_SHORT).show();
 
 
-                for (sanpham sp:sanphams) {
-                    if(sp.masp.equals(txt_themmasp.getText().toString())) {
-                        Toast.makeText(ThemSP.this, "Mã sản phẩm đã tồn tại", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    else {
-                        myRef.child("SanPham").push().setValue(sp1);
-                        Toast.makeText(ThemSP.this, "Thêm sản phẩm thành công", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-
-            }
-        });
-
-
-    }
-    public void laydulieusp()
-    {
-        myRef.child("SanPham").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                sanphams.clear();
-                for (DataSnapshot a: dataSnapshot.getChildren()) {
-                    sanpham sp=a.getValue(sanpham.class);
-                    sanphams.add(sp);
-                }
-
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
+////                        }
+//                    }
             }
         });
     }
+//    public void laydulieusp()
+//    {
+//        myRef.child("SanPham").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                sanphams.clear();
+//                for (DataSnapshot a: dataSnapshot.getChildren()) {
+//                    sanpham sp=a.getValue(sanpham.class);
+//                    sanphams.add(sp);
+//                }
+//            }
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
 
     }

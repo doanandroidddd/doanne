@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class dangnhaptc extends AppCompatActivity {
-
+    static nhanvien nv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class dangnhaptc extends AppCompatActivity {
         btn_dx=findViewById(R.id.btn_dangxuat);
         btn_themsp=findViewById(R.id.btn_themsp);
         TextView lb_dntc=findViewById(R.id.lb_dntc);
-        nhanvien nv;
+
         if(getIntent().getExtras()!=null) {
             nv = (nhanvien) getIntent().getExtras().get("nv_dn");
             lb_dntc.setText("Xin chào " +nv.tennv);
@@ -75,6 +75,9 @@ public class dangnhaptc extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(dangnhaptc.this,thongke.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("nv_thongke",(nhanvien) getIntent().getExtras().get("nv_dn"));
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });

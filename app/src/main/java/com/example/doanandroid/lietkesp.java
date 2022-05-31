@@ -14,15 +14,17 @@ import java.util.List;
 
 public class lietkesp extends AppCompatActivity implements truyenanpham {
     Button btn_search;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lietkesp);
         btn_search=findViewById(R.id.btn_timkiem);
+        nhanvien nv=(nhanvien) getIntent().getExtras().get("nv_xct");
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                    Toast.makeText(lietkesp.this,nv.manv,Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -33,9 +35,10 @@ public class lietkesp extends AppCompatActivity implements truyenanpham {
         if(mt!=null)
             mt.dienDuLieu(sp);
         else {
-
+            nhanvien nv=(nhanvien) getIntent().getExtras().get("nv_xct");
             Intent intent =new Intent(this,ChiTietSP.class);
             Bundle bundle = new Bundle();
+            bundle.putSerializable("nv_xct",nv);
             bundle.putSerializable("vinhtc",sp);
             intent.putExtras(bundle);
             startActivity(intent);

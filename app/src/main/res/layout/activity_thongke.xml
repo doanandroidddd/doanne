@@ -19,27 +19,11 @@
         android:textSize="15pt"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/txt_manv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lb_lb_tknv"
-        android:hint="Mã nhân viên" />
-
-    <EditText
-        android:id="@+id/txt_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_below="@+id/txt_manv"
-        android:inputType="date"
-        android:hint="Ngày"/>
-
     <ListView
         android:id="@+id/lst_thongke"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_below="@+id/txt_date" />
+        android:layout_below="@+id/lb_lb_tknv" />
 
 
 </RelativeLayout>

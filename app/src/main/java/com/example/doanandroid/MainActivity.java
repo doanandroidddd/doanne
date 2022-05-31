@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    List<nhanvien> nhanviens= new ArrayList<nhanvien>();
+    static List<nhanvien> nhanviens= new ArrayList<nhanvien>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
