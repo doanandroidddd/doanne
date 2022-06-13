@@ -7,14 +7,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textSize="50dp"
         android:id="@+id/txt_mahd"
         android:text="ma hoa don"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textSize="50dp"
         android:id="@+id/txt_tenkh"
         android:text="ten khach hang"
         android:layout_below="@+id/txt_mahd"

@@ -59,8 +59,7 @@ public class ThemSP extends AppCompatActivity {
                     }
                 });
 
-                sanpham sp1= new sanpham(R.drawable.sps1,txt_themtensp.getText().toString(),txt_themmasp.getText().toString(),txt_themmota.getText().toString(),Integer.parseInt(txt_soluongcon.getText().toString()));
-//                sanpham sp1= new sanpham(R.drawable.linh,"b","cc","a",1);
+                sanpham sp1= new sanpham(R.drawable.sp1,txt_themtensp.getText().toString(),txt_themmasp.getText().toString(),txt_themmota.getText().toString(),Integer.parseInt(txt_soluongcon.getText().toString()));
 
                 if(txt_themmasp.getText().toString().equals("")||txt_themtensp.getText().toString().equals("")||txt_themhinhsp.getText().toString().equals("")||txt_themmota.getText().toString().equals("")) {
                     Toast.makeText(ThemSP.this, "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();

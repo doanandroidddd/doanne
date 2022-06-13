@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Đăng Nhập"
         android:textSize="50dp"
+        android:textColor="#FFFFFF"
         android:id="@+id/lb_dn"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
